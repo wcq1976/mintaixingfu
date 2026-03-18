@@ -18,72 +18,64 @@ body{font-family:'Noto Sans SC',-apple-system,sans-serif;background:var(--bg);co
 .login p{text-align:center;font-size:14px;color:var(--gray);margin-bottom:28px}
 .form-group{margin-bottom:18px}
 .form-group label{display:block;font-size:13px;font-weight:500;margin-bottom:6px}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:15px 16px;background:var(--bg);border:2px solid transparent;border-radius:12px;font-size:15px;transition:all 0.3s}
-.form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2386868B' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{background:var(--surface);border-color:var(--red);outline:none}
-.btn{width:100%;padding:16px;background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:600;cursor:pointer;box-shadow:0 6px 20px rgba(196,30,58,0.3)}
+input,select,textarea{width:100%;padding:14px 16px;background:var(--bg);border:2px solid var(--border);border-radius:12px;font-size:14px;transition:all 0.2s}
+input:focus,select:focus,textarea:focus{border-color:var(--red);outline:none;background:#fff}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2386868B' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.btn{width:100%;padding:16px;background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;border:none;border-radius:14px;font-size:15px;font-weight:600;cursor:pointer;transition:transform 0.1s}
 .btn:active{transform:scale(0.98)}
-.header{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;padding:20px 20px 50px;border-radius:0 0 24px 24px}
-.header h1{font-size:18px;font-weight:600}
-.header .role{font-size:11px;opacity:0.85;background:rgba(255,255,255,0.2);padding:3px 10px;border-radius:12px;margin-top:4px;display:inline-block}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:-36px;padding:0 16px;position:relative;z-index:10}
-.stat{background:var(--surface);border-radius:18px;padding:18px;box-shadow:0 4px 16px rgba(0,0,0,0.05)}
-.stat .value{font-size:28px;font-weight:700}
-.stat .Label{font-size:12px;color:var(--gray);margin-top:2px}
+.header{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;padding:16px 20px;position:sticky;top:0;z-index:100}
+.header h1{font-size:16px;font-weight:600;margin-bottom:8px}
+.header-top{display:flex;justify-content:space-between;align-items:center}
+.badge{font-size:11px;background:rgba(255,255,255,0.2);padding:4px 10px;border-radius:20px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:-20px;padding:0 16px;position:relative;z-index:10}
+.stat{background:var(--surface);border-radius:16px;padding:16px 12px;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+.stat .value{font-size:24px;font-weight:700}
+.stat .label{font-size:11px;color:var(--gray);margin-top:2px}
 .stat.highlight{background:linear-gradient(135deg,var(--red),var(--red-light));color:#fff}
-.stat.highlight .value,.stat.highlight .Label{color:#fff}
-.stat.gold{background:linear-gradient(135deg,#FFD60A,#FF9500);color:#fff}
-.stat.gold .value,.stat.gold .Label{color:#fff}
-.tabs{background:var(--surface);border-radius:14px;margin:16px;padding:6px;display:flex;gap:4px;box-shadow:0 2px 10px rgba(0,0,0,0.04)}
-.tab{flex:1;padding:12px 8px;background:none;border:none;border-radius:10px;font-size:12px;font-weight:500;color:var(--gray);cursor:pointer;transition:all 0.3s;display:flex;flex-direction:column;align-items:center;gap:4px}
+.stat.highlight .value,.stat.highlight .label{color:#fff}
+.stat.gold{background:linear-gradient(135deg,var(--orange),#FF6B00);color:#fff}
+.stat.gold .value,.stat.gold .label{color:#fff}
+.tabs{background:var(--surface);margin:16px;border-radius:12px;padding:4px;display:flex;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.tab{flex:1;padding:12px 8px;background:none;border:none;border-radius:10px;font-size:12px;font-weight:500;color:var(--gray);cursor:pointer;transition:all 0.2s}
 .tab.active{background:var(--red);color:#fff}
-.tab span{font-size:20px}
-.content{padding:0 16px 80px}
-.ranking{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;padding:22px;border-radius:22px;margin-bottom:18px}
-.ranking h3{font-size:15px;font-weight:600;margin-bottom:16px}
-.rank-item{display:flex;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.15)}
-.rank-item:last-child{border:none}
-.rank-num{width:28px;height:28px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;margin-right:12px}
-.rank-num.first{background:#FFD60A;color:var(--text)}
-.rank-info{flex:1}
-.rank-name{font-weight:600;font-size:14px}
-.rank-value{font-size:12px;opacity:0.85}
+.content{padding:0 16px 100px}
 .section{margin-bottom:20px}
-.section h3{font-size:16px;font-weight:600;margin-bottom:12px}
-.card{background:var(--surface);border-radius:18px;padding:18px;margin-bottom:10px;box-shadow:0 2px 10px rgba(0,0,0,0.04)}
-.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-.card-name{font-size:16px;font-weight:600}
-.tag{display:inline-block;padding:3px 8px;border-radius:10px;font-size:10px;font-weight:600}
-.tag.high{background:#FFE5E8;color:var(--red)}
-.tag.medium{background:#FFF3E0;color:var(--orange)}
-.tag.low{background:#E8F5E9;color:var(--green)}
+.section h3{font-size:14px;font-weight:600;margin-bottom:12px;color:var(--text)}
+.card{background:var(--surface);border-radius:16px;padding:16px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.03)}
+.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.card-name{font-size:15px;font-weight:600}
 .info{font-size:12px;color:var(--gray);display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
 .info strong{color:var(--text)}
-.form-card{background:var(--surface);border-radius:22px;padding:22px;margin-bottom:18px;box-shadow:0 4px 16px rgba(0,0,0,0.05)}
-.form-title{font-size:18px;font-weight:600;margin-bottom:20px}
-.form-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.form-row-2{grid-template-columns:repeat(2,1fr);gap:10px}
-.task{background:#FFF8E1;border-left:4px solid var(--orange)}
-.task-content{font-size:14px;margin-bottom:6px}
-.task-meta{font-size:11px;color:var(--gray)}
-.review{background:var(--surface);border-radius:16px;padding:16px;margin-bottom:12px}
-.review-header{display:flex;justify-content:space-between;margin-bottom:8px}
-.reviewer{font-weight:600;font-size:14px}
+.form-card{background:var(--surface);border-radius:20px;padding:20px;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,0.04)}
+.form-card h2{font-size:17px;font-weight:600;margin-bottom:16px}
+.form-row{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.form-row-3{grid-template-columns:repeat(3,1fr);gap:10px}
+.toggle-section{background:#FFF3E0;border-radius:12px;padding:16px;margin:12px 0;border-left:3px solid var(--orange)}
+.toggle-section h4{font-size:13px;color:var(--orange);margin-bottom:10px}
+.toggle-section.hidden{display:none}
+.input-group{position:relative}
+.input-group input{padding-right:40px}
+.input-group .unit{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--gray);font-size:12px}
+.review{background:var(--surface);border-radius:12px;padding:14px;margin-bottom:8px}
+.review-header{display:flex;justify-content:space-between;margin-bottom:6px}
+.reviewer{font-weight:600;font-size:13px}
 .review-date{font-size:11px;color:var(--gray)}
-.review-content{font-size:13px;color:var(--gray);line-height:1.6}
-.summary{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;border-radius:22px;padding:24px;margin-bottom:18px}
-.summary h3{font-size:16px;font-weight:600;margin-bottom:16px}
-.summary-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center}
-.sum-stat .value{font-size:24px;font-weight:700}
-.sum-stat .Label{font-size:11px;opacity:0.85;margin-top:2px}
-.btn-outline{background:transparent;border:2px solid var(--red);color:var(--red);padding:8px 14px;border-radius:10px;font-size:13px;font-weight:600}
+.review-content{font-size:12px;color:var(--gray);line-height:1.5}
+.summary{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;border-radius:20px;padding:20px;margin-bottom:16px}
+.summary h3{font-size:15px;font-weight:600;margin-bottom:12px;color:#fff}
+.summary-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.summary-stat .value{font-size:22px;font-weight:700}
+.summary-stat .label{font-size:11px;opacity:0.85}
+.btn-outline{background:transparent;border:2px solid var(--red);color:var(--red);padding:8px 14px;border-radius:10px;font-size:12px;font-weight:600}
 .empty{text-align:center;padding:30px;color:var(--gray)}
-.toast{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,0.8);color:#fff;padding:14px 24px;border-radius:12px;font-size:14px;z-index:1000;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.toast{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,0.85);color:#fff;padding:14px 24px;border-radius:12px;font-size:14px;z-index:1000;opacity:0;pointer-events:none;transition:opacity 0.3s}
 .toast.show{opacity:1}
 .page{display:none}
 .page.active{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.card,.stat{animation:fadeIn 0.4s ease-out}
+.checkbox{display:flex;align-items:center;gap:8px;margin:12px 0}
+.checkbox input{width:auto;margin:0}
+.checkbox label{font-size:13px}
+.loading{text-align:center;padding:20px;color:var(--gray)}
 </style>
 </head>
 <body>
@@ -92,260 +84,376 @@ body{font-family:'Noto Sans SC',-apple-system,sans-serif;background:var(--bg);co
 <div class="login-box">
 <div class="logo"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
 <h1>杭州民泰-幸福人寿保险专推管理系统</h1>
-
+<p>请登录</p>
 <div class="form-group"><label>选择支行</label><select id="userBranch"><option value="">请选择支行</option><option value="营业部">营业部</option><option value="钱江新城">钱江新城</option><option value="余杭">余杭</option><option value="狮山路">狮山路</option><option value="良渚">良渚</option><option value="塘栖">塘栖</option><option value="转塘">转塘</option><option value="丁桥">丁桥</option></select></div>
-<div class="form-group"><label>选择身份</label><select id="userRole"><option value="coach">💼 保险教练</option><option value="manager"> 理财经理</option><option value="head">👔 行长</option></select></div>
+<div class="form-group"><label>身份</label><select id="userRole"><option value="coach">保险教练</option><option value="manager">理财经理</option><option value="head">行长</option></select></div>
 <div class="form-group"><label>姓名</label><input type="text" id="userName" placeholder="请输入姓名"></div>
 <div class="form-group"><label>密码</label><input type="password" id="userPassword" placeholder="请输入密码" value="6666"></div>
-<button class="btn" onclick="login()">进入系统</button>
+<button class="btn" onclick="login()">登录</button>
 </div>
 </div>
 <div id="mainApp" style="display:none">
-<div class="header"><h1>保险业务管理</h1>
-<div style="display:flex;align-items:center;gap:8px;margin-top:8px">
-<select id="dateSelector" onchange="changeDate(this.value)" style="padding:6px 10px;border-radius:8px;border:none;font-size:12px">
+<div class="header">
+<h1>保险业务管理</h1>
+<div class="header-top">
+<select id="dateSelector" onchange="changeDate(this.value)" style="padding:6px 12px;border-radius:8px;border:none;font-size:12px">
 <option value="2026-03-16">3月16日</option>
 <option value="2026-03-17">3月17日</option>
 <option value="2026-03-18">3月18日</option>
 <option value="2026-03-19">3月19日</option>
 <option value="2026-03-20">3月20日</option>
+<option value="2026-03-21">3月21日</option>
+<option value="2026-03-22">3月22日</option>
+<option value="2026-03-23">3月23日</option>
 </select>
-<span class="role" id="roleBadge"></span><span class="role" id="branchBadge" style="margin-left:8px"></span>
-</div></div>
+<span class="badge" id="roleBadge"></span>
+</div>
+</div>
 <div class="stats">
-<div class="stat"><div class="value" id="stat-invite">0</div><div class="Label">今日邀约</div></div>
-<div class="stat highlight"><div class="value" id="stat-premium">0万</div><div class="Label">保费总额</div></div>
-<div class="stat"><div class="value" id="stat-arrival">0%</div><div class="Label">实到率</div></div>
-<div class="stat gold"><div class="value" id="stat-deal">0%</div><div class="Label">出单率</div></div>
+<div class="stat"><div class="value" id="stat-invite">0</div><div class="label">今日邀约</div></div>
+<div class="stat highlight"><div class="value" id="stat-arrival">0</div><div class="label">实到人数</div></div>
+<div class="stat gold"><div class="value" id="stat-premium">0万</div><div class="label">出单保费</div></div>
 </div>
 <div class="tabs">
-<button class="tab active" onclick="showPage('dashboard')"><span></span>看板</button>
-<button class="tab" onclick="showPage('customer')"><span>📝</span>客户</button>
-<button class="tab" onclick="showPage('review')"><span>📋</span>复盘</button>
-<button class="tab" onclick="showPage('tasks')"><span></span>行长要求</button>
-<button class="tab" onclick="showPage('summary')"><span>📈</span>教练点评</button>
+<button class="tab active" onclick="showPage('dashboard')">看板</button>
+<button class="tab" onclick="showPage('customer')">客户</button>
+<button class="tab" onclick="showPage('review')">复盘</button>
+<button class="tab" onclick="showPage('tasks')">行长要求</button>
+<button class="tab" onclick="showPage('summary')">汇总</button>
 </div>
 <div class="content">
 <div class="page active" id="page-dashboard">
-<div class="ranking"><h3> 保费排行</h3><div id="premiumRanking"></div></div>
-<div class="section"><h3>📋 今日客户 <span id="customerCount"></span></h3><div id="customerList"></div></div>
-<div class="section"><h3>📝 今日复盘 <span id="reviewCount"></span></h3><div id="reviewList"></div></div>
+<div class="section"><h3>保费排名</h3><div id="premiumRanking"></div></div>
+<div class="section"><h3>邀约排名</h3><div id="inviteRanking"></div></div>
+<div class="section"><h3>理财经理复盘</h3><div id="managerReviewSummary"></div></div>
 </div>
 <div class="page" id="page-customer">
 <div class="form-card">
-<h2 class="form-title">➕ 客户报备</h2>
+<h2>客户情况</h2>
 <form id="customerForm">
-<div class="form-row-2"><div class="form-group"><label>客户姓名 *</label><input type="text" id="custName" required placeholder="请输入"></div><div class="form-group"><label>联系电话 *</label><input type="tel" id="custPhone" required placeholder="手机号"></div></div>
-<div class="form-row"><div class="form-group"><label>性别</label><select id="custGender"><option value="">请选择</option><option value="男">男</option><option value="女">女</option></select></div><div class="form-group"><label>年龄</label><select id="custAge"><option value="">请选择</option><option value="20-30">20-30岁</option><option value="30-40">30-40岁</option><option value="40-50">40-50岁</option><option value="50-60">50-60岁</option><option value="60以上">60岁以上</option></select></div><div class="form-group"><label>意向</label><select id="custLevel"><option value="high">⭐⭐⭐ 高意向</option><option value="medium" selected>⭐⭐ 中意向</option><option value="low">⭐ 观望</option></select></div></div>
-<div class="form-row"><div class="form-group"><label>职业</label><select id="custJob"><option value="">请选择</option><option value="企业主">企业主</option><option value="企业高管">企业高管</option><option value="公务员">公务员</option><option value="医生">医生</option><option value="教师">教师</option><option value="律师">律师</option><option value="会计">会计</option><option value="自由职业">自由职业</option><option value="退休">退休</option><option value="其他">其他</option></select></div><div class="form-group"><label>客户来源</label><select id="custSource"><option value="">请选择</option><option value="网点自然流量">网点自然流量</option><option value="转介绍">转介绍</option><option value="外呼">外呼</option><option value="营销活动">营销活动</option><option value="老客户">老客户</option></select></div></div>
-<div class="form-row"><div class="form-group"><label>邀约次数</label><select id="custInvite"><option value="1">1次</option><option value="2">2次</option><option value="3">3次</option><option value="4">4次</option><option value="5">5次以上</option></select></div></div>
-<div class="form-group"><label>保费(万)</label><select id="custPremium"><option value="0">请选择</option><option value="1">1万以下</option><option value="1-3">1-3万</option><option value="3-5">3-5万</option><option value="5-10">5-10万</option><option value="10-20">10-20万</option><option value="20以上">20万以上</option></select></div>
-<div class="form-group"><label>需求描述</label><textarea id="custNeed" rows="2" placeholder="客户的具体需求..."></textarea></div>
-<div class="form-group"><label>跟进计划</label><select id="custPlan"><option value="">请选择</option><option value="电话沟通">☎️ 电话沟通</option><option value="微信跟进"> 微信跟进</option><option value="再次邀约"> 再次邀约</option><option value="面谈">🏢 邀约面谈</option><option value="待定">⏳ 待定</option></select></div>
-
-<div style="background:#FFF3E0;padding:12px;border-radius:10px;margin:10px 0;border-left:3px solid #FF9500">
-<h4 style="color:#FF9500;margin-bottom:10px"> 客户面谈情况</h4>
-
-<div id="interviewDetails" style="display:none">
-
-<div id="dealDetails" style="display:none">
-<div class="form-group"><label>产品</label><select id="custProduct"><option value="">请选择</option><option value="颐家">颐家</option><option value="福瑞">福瑞</option></select></div>
-<div class="form-group"><label>缴费期</label><select id="custPeriod"><option value="">请选择</option><option value="3年交">3年交</option><option value="5年交">5年交</option></select></div>
-<div class="form-group"><label>保费(万)</label><input type="number" id="custPremium" placeholder="请输入保费"></div>
+<div class="form-row"><div class="form-group"><label>客户姓名</label><input type="text" id="custName" required></div><div class="form-group"><label>年龄</label><select id="custAge"><option value="">请选择</option><option value="20-30">20-30岁</option><option value="30-40">30-40岁</option><option value="40-50">40-50岁</option><option value="50-60">50-60岁</option></select></div></div>
+<div class="form-row"><div class="form-group"><label>性别</label><select id="custGender"><option value="">请选择</option><option value="男">男</option><option value="女">女</option></select></div><div class="form-group"><label>职业</label><select id="custJob"><option value="">请选择</option><option value="企业主">企业主</option><option value="企业高管">企业高管</option><option value="公务员">公务员</option><option value="医生">医生</option></select></div><div class="form-group"><label>来源</label><select id="custSource"><option value="">请选择</option><option value="网点自然流量">网点自然流量</option><option value="转介绍">转介绍</option><option value="外呼">外呼</option></select></div></div>
+<div class="form-row"><div class="form-group"><label>邀约次数</label><select id="custInvite"><option value="1">1次</option><option value="2">2次</option><option value="3">3次</option></select></div><div class="form-group"><label>跟进计划</label><select id="custPlan"><option value="">请选择</option><option value="电话沟通">电话沟通</option><option value="微信跟进">微信跟进</option><option value="再次邀约">再次邀约</option></select></div></div>
+<div class="toggle-section">
+<h4>客户面谈</h4>
+<div class="form-group"><label>需求描述</label><textarea id="custNeed" rows="2"></textarea></div>
+<div class="form-group"><label>是否实到</label><select id="custArrived" onchange="toggleInterview()"><option value="0">未到店</option><option value="1">已到店</option></select></div>
+<div id="interviewDetails" class="hidden">
+<div class="form-group"><label>是否出单</label><select id="custDeal" onchange="toggleDeal()"><option value="0">未出单</option><option value="1">已出单</option></select></div>
+<div id="dealDetails" class="hidden">
+<div class="form-row"><div class="form-group"><label>产品</label><select id="custProduct"><option value="">请选择</option><option value="颐家">颐家</option><option value="福瑞">福瑞</option></select></div><div class="form-group"><label>缴费期</label><select id="custPeriod"><option value="">请选择</option><option value="3年交">3年交</option><option value="5年交">5年交</option></select></div><div class="form-group"><label>保费(万)</label><div class="input-group"><input type="number" id="custPremium" placeholder="请输入"><span class="unit">万</span></div></div></div>
 </div>
-<div id="noDealDetails" style="display:none">
+<div id="noDealDetails" class="hidden">
 <div class="form-group"><label>面谈情况</label><textarea id="custInterview" rows="2"></textarea></div>
-<div class="form-group"><label>未购买原因</label><select id="custNoBuy"><option value="">请选择</option><option value="考虑中">考虑中</option><option value="预算不足">预算不足</option><option value="需要比较">需要比较</option><option value="家人商量">家人商量</option><option value="其他">其他</option></select></div>
+<div class="form-group"><label>未购买原因</label><select id="custNoBuy"><option value="">请选择</option><option value="考虑中">考虑中</option><option value="预算不足">预算不足</option></select></div>
 </div>
 </div>
-
-<input type="hidden" id="custPhone">
-<input type="hidden" id="custGender">
-<input type="hidden" id="custAge">
-<input type="hidden" id="custJob">
-<input type="hidden" id="custLevel">
-<input type="hidden" id="custNeedType">
-<input type="hidden" id="custSource">
-<input type="hidden" id="custPlan">
-
-<button type="submit" class="btn">提交</button><select id="custPlan"><option value="">请选择</option><option value="电话沟通">☎️ 电话沟通</option><option value="微信跟进"> 微信跟进</option><option value="再次邀约"> 再次邀约</option><option value="面谈">🏢 邀约面谈</option><option value="待定">⏳ 待定</option></select></div>
-<button type="submit" class="btn">提交报备</button>
+<button type="submit" class="btn">提交</button>
 </form>
 </div>
-<div class="card" id="myCustomerCard" style="display:none"><h3 class="form-title">✏️ 我的客户(可编辑)</h3><div id="myCustomerList"></div></div>
 </div>
 <div class="page" id="page-review">
 <div class="form-card">
-<h2 class="form-title">📝 每日复盘</h2>
+<h2>今日复盘</h2>
 <form id="reviewForm">
-<div class="form-group"><label>今日邀约情况</label><select id="reviewInvite"><option value="">请选择</option><option value="0">0人</option><option value="1-3">1-3人</option><option value="4-6">4-6人</option><option value="7-10">7-10人</option><option value="10以上">10人以上</option></select></div>
-<div class="form-group"><label>成功转化</label><select id="reviewSuccess"><option value="">请选择</option><option value="0">0单</option><option value="1单">1单</option><option value="2单">2单</option><option value="3单以上">3单以上</option></select></div>
-<div class="form-group"><label>遇到的问题</label><textarea id="reviewProblem" rows="2" placeholder="今天遇到了什么困难？"></textarea></div>
-<div class="form-group"><label>需要支持</label><textarea id="reviewHelp" rows="2" placeholder="需要领导帮忙协调什么？"></textarea></div>
+<div class="form-row"><div class="form-group"><label>今日邀约</label><select id="reviewInvite"><option value="0">0人</option><option value="1">1人</option><option value="2">2人</option><option value="3">3人</option></select></div><div class="form-group"><label>实到人数</label><select id="reviewArrived"><option value="0">0人</option><option value="1">1人</option><option value="2">2人</option></select></div><div class="form-group"><label>出单保费(万)</label><div class="input-group"><input type="number" id="reviewPremium" placeholder="请输入"><span class="unit">万</span></div></div></div>
+<div class="form-group"><label>今日心得</label><textarea id="reviewExperience" rows="2"></textarea></div>
+<div class="form-group"><label>明日计划</label><textarea id="reviewTomorrow" rows="2"></textarea></div>
+<div class="form-group"><label>遇到的问题</label><textarea id="reviewProblem" rows="2"></textarea></div>
+<div class="checkbox"><input type="checkbox" id="reviewNeedHelp"><label for="reviewNeedHelp">需要陪访</label></div>
 <button type="submit" class="btn">提交复盘</button>
 </form>
 </div>
 </div>
 <div class="page" id="page-tasks">
 <div class="card" id="assignTaskCard" style="display:none">
-<h3 class="form-title">📋 布置任务</h3>
+<h2>行长要求</h2>
 <form id="taskForm">
-<div class="form-group"><label>任务内容</label><textarea id="taskContent" rows="2" placeholder="请输入任务内容..."></textarea></div>
-<div class="form-group"><label>执行人</label><select id="taskAssignee"><option value="all">全部人员</option></select></div>
-<div class="form-group"><label>截止时间</label><input type="date" id="taskDeadline"></div>
-<button type="submit" class="btn" style="background:linear-gradient(135deg,#FF9500,#FF6B00)">发布任务</button>
+<div class="form-group"><label>今日工作要求</label><textarea id="taskContent" rows="3"></textarea></div>
+<button type="submit" class="btn" style="background:linear-gradient(135deg,var(--orange),#FF6B00)">发布</button>
 </form>
 </div>
-<div id="taskList"></div>
+<div class="card"><h3 class="section">今日要求</h3><div id="todayTaskContent"></div></div>
 </div>
 <div class="page" id="page-summary">
-<div class="summary"><h3> 今日汇总</h3><div class="summary-stats"><div class="sum-stat"><div class="value" id="sum-invite">0</div><div class="Label">总邀约</div></div><div class="sum-stat"><div class="value" id="sum-arrival">0%</div><div class="Label">实到率</div></div><div class="sum-stat"><div class="value" id="sum-deal">0%</div><div class="Label">出单率</div></div></div></div>
-<div class="card" id="coachSummaryCard" style="display:none"><h3 class="form-title"> 每日点评</h3>
-<form id="summaryForm">
-<div class="form-group"><label>今日点评</label><textarea id="summaryContent" rows="3" placeholder="对今日工作情况进行点评..."></textarea></div>
-<div class="form-group"><label>明日要求</label><textarea id="summaryTomorrow" rows="2" placeholder="明日工作要求和目标..."></textarea></div>
+<div class="summary"><h3>今日汇总</h3><div class="summary-stats"><div class="summary-stat"><div class="value" id="sum-invite">0</div><div class="label">总邀约</div></div><div class="summary-stat"><div class="value" id="sum-arrival">0</div><div class="label">总实到</div></div><div class="summary-stat"><div class="value" id="sum-premium">0万</div><div class="label">总保费</div></div></div></div>
+<div class="card" id="coachCommentCard" style="display:none"><h2>教练点评</h2>
+<form id="coachForm">
+<div class="form-group"><label>今日点评</label><textarea id="coachComment" rows="3"></textarea></div>
 <button type="submit" class="btn">发布点评</button>
 </form>
 </div>
+<div class="card"><h3 class="section">历史点评</h3><div id="summaryHistory"></div></div>
 </div>
 </div>
 </div>
+<div class="loading" id="loading" style="display:none">数据同步中...</div>
 <script>
-let currentUser='',userRole='',userBranch='',selectedDate=new Date().toISOString().split('T')[0];
+// API Server URL - 修改为你的服务器地址
+const API_BASE = 'http://43.131.48.124:3000/api';
+
+var currentUser='',userRole='',userBranch='',selectedDate=new Date().toISOString().split('T')[0];
+
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2200);}
+
+function login(){
+  var branch=document.getElementById('userBranch').value;
+  var role=document.getElementById('userRole').value;
+  var name=document.getElementById('userName').value.trim();
+  var pwd=document.getElementById('userPassword').value;
+  if(!branch){showToast('请选择支行');return;}
+  if(!name){showToast('请输入姓名');return;}
+  if(pwd!=='6666'){showToast('密码错误');return;}
+  userBranch=branch;currentUser=name;userRole=role;
+  var roleNames={coach:'保险教练',manager:'理财经理',head:'行长'};
+  document.getElementById('roleBadge').textContent=roleNames[role];
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('mainApp').style.display='block';
+  document.getElementById('assignTaskCard').style.display=role==='head'?'block':'none';
+  document.getElementById('coachCommentCard').style.display=role==='coach'?'block':'none';
+  loadAllData();
+}
+
+async function loadAllData(){
+  document.getElementById('loading').style.display='block';
+  try {
+    var [custRes, revRes, taskRes, commRes] = await Promise.all([
+      fetch(API_BASE + '/customers').then(r=>r.json()),
+      fetch(API_BASE + '/reviews').then(r=>r.json()),
+      fetch(API_BASE + '/tasks').then(r=>r.json()),
+      fetch(API_BASE + '/comments').then(r=>r.json())
+    ]);
+    window.customers = custRes.items || [];
+    window.reviews = revRes.items || [];
+    window.tasks = taskRes.items || [];
+    window.comments = commRes.items || [];
+  } catch(e) {
+    console.error(e);
+    window.customers = [];
+    window.reviews = [];
+    window.tasks = [];
+    window.comments = [];
+  }
+  document.getElementById('loading').style.display='none';
+  loadDashboard();loadTasks();loadSummaries();
+}
+
+function showPage(pg){
+  document.querySelectorAll('.page').forEach(function(x){x.classList.remove('active')});
+  document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active')});
+  document.getElementById('page-'+pg).classList.add('active');
+  event.target.classList.add('active');
+  if(pg==='dashboard')loadDashboard();
+  if(pg==='tasks')loadTasks();
+  if(pg==='summary')loadSummaries();
+}
+
+function changeDate(d){selectedDate=d;loadDashboard();loadTasks();loadSummaries();}
+
 function toggleInterview(){
-    const a=document.getElementById('custArrived').value;
-    document.getElementById('interviewDetails').style.display=a==='1'?'block':'none';
-    if(a==='0'){document.getElementById('dealDetails').style.display='none';document.getElementById('noDealDetails').style.display='none'}
+  var a=document.getElementById('custArrived').value;
+  document.getElementById('interviewDetails').style.display=a==='1'?'block':'none';
+  if(a==='0'){document.getElementById('dealDetails').style.display='none';document.getElementById('noDealDetails').style.display='none';}
 }
+
 function toggleDeal(){
-    const d=document.getElementById('custDeal').value;
-    document.getElementById('dealDetails').style.display=d==='1'?'block':'none';
-    document.getElementById('noDealDetails').style.display=d==='0'?'block':'none';
+  var d=document.getElementById('custDeal').value;
+  document.getElementById('dealDetails').style.display=d==='1'?'block':'none';
+  document.getElementById('noDealDetails').style.display=d==='0'?'block':'none';
 }
 
-function changeDate(d){
-    selectedDate=d;
-    loadDashboard();
-    loadTasks();
-    loadSummaries();
-}
-function initData(){
-    if(!localStorage.getItem('insurance_coach_comments'))localStorage.setItem('insurance_coach_comments','[]');
-
-    const n=new Date();
-    document.getElementById('currentDate').textContent=n.toLocaleDateString('zh-CN',{year:'numeric',month:'long',day:'numeric',weekday:'long'});
-if(!localStorage.getItem('insurance_customers'))localStorage.setItem('insurance_customers','[]');if(!localStorage.getItem('insurance_reviews'))localStorage.setItem('insurance_reviews','[]');if(!localStorage.getItem('insurance_tasks'))localStorage.setItem('insurance_tasks','[]');if(!localStorage.getItem('insurance_summaries'))localStorage.setItem('insurance_summaries','[]')}
-function getCustomers(){return JSON.parse(localStorage.getItem('insurance_customers')||'[]')}
-function saveCustomers(data){localStorage.setItem('insurance_customers',JSON.stringify(data))}
-function getReviews(){return JSON.parse(localStorage.getItem('insurance_reviews')||'[]')}
-function saveReviews(data){localStorage.setItem('insurance_reviews',JSON.stringify(data))}
-function getTasks(){return JSON.parse(localStorage.getItem('insurance_tasks')||'[]')}
-function saveTasks(data){localStorage.setItem('insurance_tasks',JSON.stringify(data))}
-function getSummaries(){return JSON.parse(localStorage.getItem('insurance_summaries')||'[]')}
-function saveSummaries(data){localStorage.setItem('insurance_summaries',JSON.stringify(data))}
-function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
-function login(){const branch=document.getElementById('userBranch').value;const role=document.getElementById('userRole').value;const name=document.getElementById('userName').value.trim();const pwd=document.getElementById('userPassword').value;if(!branch){showToast('请选择支行');return}if(!name){showToast('请输入姓名');return}if(pwd!=='6666'){showToast('密码错误');return}userBranch=branch;currentUser=name;userRole=role;const roleNames={coach:'保险教练',manager:'理财经理',head:'行长'};document.getElementById('branchBadge')?document.getElementById('branchBadge').textContent=branch:null;document.getElementById('roleBadge').textContent=roleNames[role];document.getElementById('loginScreen').style.display='none';document.getElementById('mainApp').style.display='block';const isLeader=role==='head'||role==='coach';document.getElementById('assignTaskCard').style.display=isLeader?'block':'none';document.getElementById('coachSummaryCard').style.display=isLeader?'block':'none';document.getElementById('myCustomerCard').style.display=role==='manager'?'block':'none';
-        document.getElementById('coachCommentCard').style.display=role==='coach'?'block':'none';
-        document.getElementById('assignTaskCard').style.display=role==='head'?'block':'none';;loadDashboard();loadTasks()}
-function showPage(page){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));document.getElementById('page-'+page).classList.add('active');event.currentTarget.classList.add('active');if(page==='dashboard')loadDashboard();if(page==='tasks')loadTasks()}
-function loadDashboard(){const targetDate=selectedDate;
-    const customers=getCustomers();
-    const reviews=getReviews();
-    const today=new Date().toDateString();
-    const todayCustomers=customers.filter(c=>new Date(c.createTime).toDateString()===targetDate);
-    const todayReviews=reviews.filter(r=>new Date(r.createTime).toDateString()===targetDate);
-    
-    // 保费排名
-    const managers=[...new Set(customers.map(c=>c.manager))];
-    const premiumStats={};
-    managers.forEach(m=>{
-        const mc=todayCustomers.filter(c=>c.manager===m&&c.deal==='1');
-        premiumStats[m]=mc.reduce((s,c)=>s+(parseFloat(c.premium)||0),0);
+function loadDashboard(){
+  var customers=window.customers||[];
+  var reviews=window.reviews||[];
+  var targetDate=selectedDate;
+  
+  // Filter by date - check if date field matches
+  var todayCustomers=customers.filter(function(c){
+    var d = c.fields && c.fields['fld3FQxM2p'];
+    return d && d.startsWith && d.startsWith(targetDate);
+  });
+  
+  var totalInvite=todayCustomers.length;
+  var totalArrived=todayCustomers.filter(function(c){
+    return c.fields && c.fields['fldzwE3KZ8'] === '是';
+  }).length;
+  var totalPremium=todayCustomers.reduce(function(s,c){
+    return s + (parseFloat(c.fields && c.fields['fldSRIJXwl']) || 0);
+  },0);
+  
+  document.getElementById('stat-invite').textContent=totalInvite;
+  document.getElementById('stat-arrival').textContent=totalArrived;
+  document.getElementById('stat-premium').textContent=totalPremium+'万';
+  document.getElementById('sum-invite').textContent=totalInvite;
+  document.getElementById('sum-arrival').textContent=totalArrival;
+  document.getElementById('sum-premium').textContent=totalPremium+'万';
+  
+  // Premium ranking
+  var managers={};
+  customers.forEach(function(c){
+    var m = c.fields && c.fields['fldlJ0fKJo'];
+    if(m){
+      if(!managers[m])managers[m]=0;
+      managers[m]+=(parseFloat(c.fields && c.fields['fldSRIJXwl'])||0);
+    }
+  });
+  var premiumSorted=Object.entries(managers).sort(function(a,b){return b[1]-a[1]});
+  var premiumHtml='';
+  premiumSorted.forEach(function(m,i){
+    premiumHtml+='<div class="card" style="display:flex;align-items:center;padding:12px"><div style="width:28px;height:28px;background:'+(i===0?'#FFD60A':'rgba(255,255,255,0.2)')+';border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;margin-right:12px;color:'+(i===0?'#000':'#fff')+'">'+(i+1)+'</div><div style="flex:1"><div style="font-weight:600">'+m[0]+'</div><div style="font-size:12px;color:var(--gray)">'+m[1]+'万</div></div></div>';
+  });
+  document.getElementById('premiumRanking').innerHTML=premiumHtml||'<div class="empty">暂无数据</div>';
+  
+  // Invite ranking
+  var inviteStats={};
+  customers.forEach(function(c){
+    var m = c.fields && c.fields['fldlJ0fKJo'];
+    if(m){
+      if(!inviteStats[m])inviteStats[m]=0;
+      inviteStats[m]++;
+    }
+  });
+  var inviteSorted=Object.entries(inviteStats).sort(function(a,b){return b[1]-a[1]});
+  var inviteHtml='';
+  inviteSorted.forEach(function(m,i){
+    inviteHtml+='<div class="card" style="display:flex;align-items:center;padding:12px"><div style="width:28px;height:28px;background:'+(i===0?'#FF9500':'rgba(255,255,255,0.2)')+';border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;margin-right:12px;color:#fff">'+(i+1)+'</div><div style="flex:1"><div style="font-weight:600">'+m[0]+'</div><div style="font-size:12px;color:var(--gray)">'+m[1]+'人</div></div></div>';
+  });
+  document.getElementById('inviteRanking').innerHTML=inviteHtml||'<div class="empty">暂无数据</div>';
+  
+  // Manager reviews
+  var reviewSummaryHtml='';
+  Object.keys(managers).forEach(function(m){
+    var mr=reviews.filter(function(r){
+      return r.fields && r.fields['flduRHXdZu']===m && r.fields['fld0FCyoGT'] && r.fields['fld0FCyoGT'].startsWith(targetDate);
     });
-    const premiumSorted=Object.entries(premiumStats).sort((a,b)=>b[1]-a[1]);
-    let premiumHtml='';
-    premiumSorted.forEach((m,i)=>{
-        premiumHtml+=`<div class="rank-item"><div class="rank-num ${i===0?'first':''}">${i+1}</div><div class="rank-info"><div class="rank-name">${m[0]}</div><div class="rank-value">${m[1]}万</div></div></div>`;
-    });
-    document.getElementById('premiumRanking').innerHTML=premiumHtml||'<div class="empty" style="color:#fff">暂无数据</div>';
-    
-    // 邀约排名
-    const inviteStats={};
-    managers.forEach(m=>{
-        const mc=todayCustomers.filter(c=>c.manager===m);
-        inviteStats[m]=mc.reduce((s,c)=>s+(parseInt(c.invite)||0),0);
-    });
-    const inviteSorted=Object.entries(inviteStats).sort((a,b)=>b[1]-a[1]);
-    let inviteHtml='';
-    inviteSorted.forEach((m,i)=>{
-        inviteHtml+=`<div class="rank-item"><div class="rank-num ${i===0?'first':''}">${i+1}</div><div class="rank-info"><div class="rank-name">${m[0]}</div><div class="rank-value">${m[1]}次</div></div></div>`;
-    });
-    document.getElementById('inviteRanking').innerHTML=inviteHtml||'<div class="empty" style="color:#fff">暂无数据</div>';
-    
-    // 险种分析
-    const productStats={};
-    todayCustomers.filter(c=>c.deal==='1').forEach(c=>{
-        const p=c.product||'其他';
-        productStats[p]=(productStats[p]||0)+1;
-    });
-    let productHtml='';
-    Object.entries(productStats).forEach((p,i)=> {
-        productHtml+=`<div style="display:flex;justify-content:space-between;padding:4px 0"><span>${p[0]}</span><span style="font-weight:600">${p[1]}单</span></div>`;
-    });
-    document.getElementById('productAnalysis').innerHTML=productHtml||'<div class="empty">暂无数据</div>';
-    
-    // 理财经理复盘汇总
-    let reviewSummaryHtml='';
-    managers.forEach(m=>{
-        const mr=todayReviews.filter(r=>r.manager===m);
-        if(mr.length>0){
-            const lastReview=mr[mr.length-1];
-            reviewSummaryHtml+=`<div style="background:#fff;padding:12px;border-radius:10px;margin-bottom:8px"><div style="font-weight:600;font-size:13px;margin-bottom:6px">${m}</div><div style="font-size:11px;color:#666">今日:${lastReview.experience||'-'}</div><div style="font-size:11px;color:#666">明日:${lastReview.tomorrow||'-'}</div></div>`;
-        }
-    });
-    document.getElementById('managerReviewSummary').innerHTML=reviewSummaryHtml||'<div class="empty">暂无复盘</div>';
-const todayCustomers=customers.filter(c=>new Date(c.createTime).toDateString()===targetDate);const totalInvite=todayCustomers.reduce((s,c)=>s+(parseInt(c.invite)||0),0);const totalArrived=todayCustomers.reduce((s,c)=>s+(parseInt(c.arrived)||0),0);const totalDeal=todayCustomers.reduce((s,c)=>s+(parseInt(c.deal)||0),0);const totalPremium=todayCustomers.reduce((s,c)=>s+(parseFloat(c.premium)||0),0);const arrivalRate=totalInvite>0?Math.round(totalArrived/totalInvite*100):0;const dealRate=totalInvite>0?Math.round(totalDeal/totalInvite*100):0;document.getElementById('stat-invite').textContent=totalInvite;document.getElementById('stat-premium').textContent=totalPremium+'万';document.getElementById('stat-arrival').textContent=arrivalRate+'%';document.getElementById('stat-deal').textContent=dealRate+'%';document.getElementById('sum-invite').textContent=totalInvite;document.getElementById('sum-arrival').textContent=arrivalRate+'%';document.getElementById('sum-deal').textContent=dealRate+'%';const managers=[...new Set(customers.map(c=>c.manager))];const managerStats={};managers.forEach(m=>{const mc=todayCustomers.filter(c=>c.manager===m);managerStats[m]=mc.reduce((s,c)=>s+(parseFloat(c.premium)||0),0)});const sorted=Object.entries(managerStats).sort((a,b)=>b[1]-a[1]);let rh='';sorted.forEach((m,i)=>{rh+=`<div class="rank-item"><div class="rank-num ${i===0?'first':''}">${i+1}</div><div class="rank-info"><div class="rank-name">${m[0]}</div><div class="rank-value">${m[1]}万</div></div></div>`});document.getElementById('premiumRanking').innerHTML=rh||'<div class="empty" style="color:#fff">暂无数据</div>';let sc=todayCustomers;if(userRole==='manager')sc=todayCustomers.filter(c=>c.manager===currentUser);document.getElementById('customerCount').textContent=`(${sc.length})`;document.getElementById('customerList').innerHTML=sc.map(c=>createCustomerCard(c)).join('')||'<div class="empty">暂无</div>';const todayReviews=reviews.filter(r=>new Date(r.createTime).toDateString()===targetDate);let sr=todayReviews;if(userRole==='manager')sr=todayReviews.filter(r=>r.manager===currentUser);document.getElementById('reviewCount').textContent=`(${sr.length})`;document.getElementById('reviewList').innerHTML=sr.map(r=>createReviewCard(r)).join('')||'<div class="empty">暂无</div>';if(userRole==='manager'){const mc=getCustomers().filter(c=>c.manager===currentUser);document.getElementById('myCustomerList').innerHTML=mc.map(c=>createCustomerCard(c)).join('')||'<div class="empty">暂无</div>'}}
-function createCustomerCard(c){const lt={high:'高意向',medium:'中意向',low:'观望'};return'<div class="card"><div class="card-header"><span class="card-name">'+c.name+'</span></div><div class="info"><div>'+c.manager+'</div><div>'+(c.premium||'-')+'万</div><div>'+(c.plan||'-')+'</div></div>'+(c.manager===currentUser&&userRole==='manager'?'<button class="btn-outline" style=\'margin-top:10px\' onclick=\'deleteCustomer("'+c.id+'")\'>删除</button>':'')+'</div>'}
-function deleteCustomer(id){
-    if(!confirm('确定删除?'))return;
-    const cs=getCustomers();
-    const idx=cs.findIndex(c=>c.id===id);
-    if(idx>=0){cs.splice(idx,1);saveCustomers(cs);showToast('已删除!');loadDashboard()}
+    if(mr.length>0){
+      var lastReview=mr[mr.length-1];
+      reviewSummaryHtml+='<div class="card"><div style="font-weight:600;margin-bottom:6px">'+m+'</div><div style="font-size:12px;color:var(--gray)">今日:'+(lastReview.fields && lastReview.fields['fldrGGIAUj']||'-')+'</div><div style="font-size:12px;color:var(--gray)">明日:'+(lastReview.fields && lastReview.fields['fldcrug4vF']||'-')+'</div></div>';
+    }
+  });
+  document.getElementById('managerReviewSummary').innerHTML=reviewSummaryHtml||'<div class="empty">暂无复盘</div>';
 }
 
-function createReviewCard(r){const canC=userRole==='head'||userRole==='coach';return`<div class="review"><div class="review-header"><span class="reviewer">${r.manager}</span><span class="review-date">${new Date(r.createTime).toLocaleTimeString()}</span></div><div class="review-content"><p>邀约:${r.invite||'-'}人 | 实到:${r.arrived||'-'}人 | 保费:${r.premium||0}万:${r.problem||'-'}</p>${r.comment?`<p style="color:var(--red)">点评:${r.comment}</p>`:''}</div>${canC?`<div style="margin-top:10px"><textarea id="comment-${r.id}" rows="2" placeholder="点评..." style="margin-bottom:8px"></textarea><button class="btn-outline" onclick="addComment('${r.id}')">提交</button></div>`:''}</div>`}
-function addComment(rid){const cmt=document.getElementById('comment-'+rid).value;if(!cmt)return;const rs=getReviews();const i=rs.findIndex(r=>r.id===rid);if(i>=0){rs[i].comment=cmt;rs[i].commenter=currentUser;saveReviews(rs);showToast('点评已发布!');loadDashboard()}}
-function editCustomer(id){const cs=getCustomers();const c=cs.find(x=>x.id===id);if(!c)return;const newName=prompt('客户姓名',c.name);if(newName===null)return;const newPhone=prompt('电话',c.phone);if(newPhone===null)return;c.name=newName;c.phone=newPhone;c.updateTime=new Date().toISOString();saveCustomers(cs);showToast('修改成功!');loadDashboard()}
-document.getElementById('customerForm').addEventListener('submit',function(e){e.preventDefault();const c={id:Date.now().toString(),name:document.getElementById('custName').value,phone:document.getElementById('custPhone').value,gender:document.getElementById('custGender').value,age:document.getElementById('custAge').value,job:document.getElementById('custJob').value,level:document.getElementById('custLevel').value,needType:document.getElementById('custNeedType').value,source:document.getElementById('custSource').value,invite:document.getElementById('custInvite').value,arrived:document.getElementById('custArrived').value,deal:document.getElementById('custDeal').value,premium:document.getElementById('custPremium').value,need:document.getElementById('custNeed').value,plan:document.getElementById('custPlan').value,manager:currentUser,createTime:new Date().toISOString()};const cs=getCustomers();cs.push(c);saveCustomers(cs);showToast('报备成功!');this.reset();loadDashboard()});
-document.getElementById('reviewForm').addEventListener('submit',function(e){e.preventDefault();const r={id:Date.now().toString(),manager:currentUser,invite:document.getElementById('reviewInvite').value,success:document.getElementById('reviewSuccess').value,problem:document.getElementById('reviewProblem').value,help:document.getElementById('reviewHelp').value,comment:'',createTime:new Date().toISOString()};const rs=getReviews();rs.push(r);saveReviews(rs);showToast('复盘成功!');this.reset();loadDashboard()});
-document.getElementById('taskForm').addEventListener('submit',function(e){e.preventDefault();const t={id:Date.now().toString(),content:document.getElementById('taskContent').value,assignee:document.getElementById('taskAssignee').value,deadline:document.getElementById('taskDeadline').value,creator:currentUser,createTime:new Date().toISOString(),done:false};const ts=getTasks();ts.push(t);saveTasks(ts);showToast('任务已发布!');this.reset();loadTasks()});
-function loadTasks(){
-    const ts=getTasks();
-    const today=new Date().toDateString();
-    const todayTasks=ts.filter(t=>new Date(t.createTime).toDateString()===today);
-    todayTasks.sort((a,b)=>new Date(b.createTime)-new Date(a.createTime));
-    let h='';
-    todayTasks.forEach(t=>{
-        h+=`<div class="card task"><div class="task-content">${t.content}</div><div class="task-meta"> ${t.creator} | ${new Date(t.createTime).toLocaleDateString()}</div></div>`;
-    });
-    document.getElementById('todayTaskContent').innerHTML=h||'<div class="empty">暂无要求</div>';
-}
-function getCoachComments(){return JSON.parse(localStorage.getItem('insurance_coach_comments')||'[]')}
-function saveCoachComments(data){localStorage.setItem('insurance_coach_comments',JSON.stringify(data))}
-
-document.getElementById('coachForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    const c={id:Date.now().toString(),comment:document.getElementById('coachComment').value,creator:currentUser,createTime:new Date().toISOString()};
-    const ccs=getCoachComments();
-    ccs.push(c);
-    saveCoachComments(ccs);
-    showToast('点评已发布!');
-    document.getElementById('coachComment').value='';
-    loadSummaries();
+document.getElementById('customerForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var data={
+    date:selectedDate,
+    manager:currentUser,
+    name:document.getElementById('custName').value,
+    gender:document.getElementById('custGender').value,
+    age:document.getElementById('custAge').value,
+    job:document.getElementById('custJob').value,
+    source:document.getElementById('custSource').value,
+    need:document.getElementById('custNeed').value,
+    arrived:document.getElementById('custArrived').value,
+    deal:document.getElementById('custDeal').value,
+    product:document.getElementById('custProduct').value,
+    period:document.getElementById('custPeriod').value,
+    premium:document.getElementById('custPremium').value,
+    interview:document.getElementById('custInterview').value,
+    noBuy:document.getElementById('custNoBuy').value,
+    plan:document.getElementById('custPlan').value
+  };
+  await fetch(API_BASE+'/customers',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(data)
+  });
+  showToast('提交成功!');
+  this.reset();
+  document.getElementById('custArrived').value='0';
+  toggleInterview();
+  loadAllData();
 });
 
-document.getElementById('summaryForm').addEventListener('submit',function(e){e.preventDefault();const s={id:Date.now().toString(),content:document.getElementById('summaryContent').value,tomorrow:document.getElementById('summaryTomorrow').value,creator:currentUser,createTime:new Date().toISOString()};const ss=getSummaries();ss.push(s);saveSummaries(ss);showToast('点评已发布!');this.reset()});
-initData();
+document.getElementById('reviewForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var data={
+    date:selectedDate,
+    manager:currentUser,
+    invite:document.getElementById('reviewInvite').value,
+    arrived:document.getElementById('reviewArrived').value,
+    premium:document.getElementById('reviewPremium').value,
+    problem:document.getElementById('reviewProblem').value,
+    experience:document.getElementById('reviewExperience').value,
+    tomorrow:document.getElementById('reviewTomorrow').value,
+    needHelp:document.getElementById('reviewNeedHelp').checked
+  };
+  await fetch(API_BASE+'/reviews',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(data)
+  });
+  showToast('复盘成功!');
+  this.reset();
+  loadAllData();
+});
+
+document.getElementById('taskForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var data={
+    date:selectedDate,
+    creator:currentUser,
+    content:document.getElementById('taskContent').value
+  };
+  await fetch(API_BASE+'/tasks',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(data)
+  });
+  showToast('已发布!');
+  this.reset();
+  loadAllData();
+});
+
+async function loadTasks(){
+  var tasks=window.tasks||[];
+  var today=selectedDate;
+  var todayTasks=tasks.filter(function(t){
+    var d = t.fields && t.fields['fldp1det5a'];
+    return d && d.startsWith && d.startsWith(today);
+  });
+  todayTasks.sort(function(a,b){return new Date(b.createTime)-new Date(a.createTime)});
+  var h='';
+  todayTasks.forEach(function(t){
+    h+='<div class="card" style="background:#FFF8E1;border-left:3px solid var(--orange)"><div>'+(t.fields&&t.fields['fldZRcLn8k']||'')+'</div><div style="font-size:11px;color:var(--gray);margin-top:6px">'+(t.fields&&t.fields['fldFMEFAoQ']||'')+' | '+(t.fields&&t.fields['fldp1det5a']||'')+'</div></div>';
+  });
+  document.getElementById('todayTaskContent').innerHTML=h||'<div class="empty">暂无要求</div>';
+}
+
+document.getElementById('coachForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var data={
+    date:selectedDate,
+    coach:currentUser,
+    comment:document.getElementById('coachComment').value
+  };
+  await fetch(API_BASE+'/comments',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(data)
+  });
+  showToast('点评已发布!');
+  this.reset();
+  loadAllData();
+});
+
+async function loadSummaries(){
+  var comments=window.comments||[];
+  var today=selectedDate;
+  var todayComments=comments.filter(function(c){
+    var d = c.fields && c.fields['fldfeQZ7gt'];
+    return d && d.startsWith && d.startsWith(today);
+  });
+  var h='';
+  todayComments.forEach(function(c){
+    h+='<div class="review"><div class="review-header"><span class="reviewer">'+(c.fields&&c.fields['fldmdMpiQp']||'')+'</span><span class="review-date">'+(c.fields&&c.fields['fldfeQZ7gt']||'')+'</span></div><div class="review-content">'+(c.fields&&c.fields['fldBZcLLzp']||'')+'</div></div>';
+  });
+  document.getElementById('summaryHistory').innerHTML=h||'<div class="empty">暂无点评</div>';
+}
+
+// Initialize
+document.getElementById('dateSelector').value=selectedDate;
 </script>
 </body>
 </html>
