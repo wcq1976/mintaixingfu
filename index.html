@@ -383,12 +383,16 @@ document.getElementById('reviewForm').addEventListener('submit',async function(e
     tomorrow:document.getElementById('reviewTomorrow').value,
     needHelp:document.getElementById('reviewNeedHelp').checked
   };
-  await fetch(API_BASE+'/reviews',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify(data)
-  });
-  showToast('复盘成功!');
+  try {
+    await fetch(API_BASE+'/reviews',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(data)
+    });
+    showToast('复盘成功!');
+  } catch(e) {
+    showToast('提交失败，请检查网络');
+  }
   this.reset();
   loadAllData();
 });
@@ -400,12 +404,16 @@ document.getElementById('taskForm').addEventListener('submit',async function(e){
     creator:currentUser,
     content:document.getElementById('taskContent').value
   };
-  await fetch(API_BASE+'/tasks',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify(data)
-  });
-  showToast('已发布!');
+  try {
+    await fetch(API_BASE+'/tasks',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(data)
+    });
+    showToast('已发布!');
+  } catch(e) {
+    showToast('提交失败，请检查网络');
+  }
   this.reset();
   loadAllData();
 });
@@ -432,12 +440,16 @@ document.getElementById('coachForm').addEventListener('submit',async function(e)
     coach:currentUser,
     comment:document.getElementById('coachComment').value
   };
-  await fetch(API_BASE+'/comments',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify(data)
-  });
-  showToast('点评已发布!');
+  try {
+    await fetch(API_BASE+'/comments',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(data)
+    });
+    showToast('点评已发布!');
+  } catch(e) {
+    showToast('提交失败，请检查网络');
+  }
   this.reset();
   loadAllData();
 });
