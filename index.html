@@ -476,7 +476,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC
 </div><!-- /mainApp -->
 
 <script>
-const API_BASE = 'http://43.131.48.124:3000/api';
 var currentUser='', userRole='', userBranch='';
 var selectedDate=new Date().toISOString().split('T')[0];
 // 本周日期范围
@@ -484,82 +483,14 @@ var WEEK_DATES=['2026-03-16','2026-03-17','2026-03-18','2026-03-19','2026-03-20'
 var WEEK_DAYS=['周一','周二','周三','周四','周五'];
 
 // ════ 存储 ════
-function getCustomers(){
-  var c=localStorage.getItem('mt_customers');
-  if(c)try{return JSON.parse(c);}catch(e){}
-  return [];
-}
-async function apiGetCustomers(){
-  try{
-    var r=await fetch(API_BASE+'/customers').then(r=>r.json());
-    localStorage.setItem('mt_customers',JSON.stringify(r.items||[]));
-    return r.items||[];
-  }catch(e){return JSON.parse(localStorage.getItem('mt_customers')||'[]');}
-}
-function saveCustomers(d){
-  localStorage.setItem('mt_customers',JSON.stringify(d));
-  apiPostCustomer(d);
-}
-async function apiPostCustomer(d){
-  try{await fetch(API_BASE+'/customers',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});}catch(e){}
-}
-function getReviews(){
-  var r=localStorage.getItem('mt_reviews');
-  if(r)try{return JSON.parse(r);}catch(e){}
-  return [];
-}
-async function apiGetReviews(){
-  try{
-    var r=await fetch(API_BASE+'/reviews').then(r=>r.json());
-    localStorage.setItem('mt_reviews',JSON.stringify(r.items||[]));
-    return r.items||[];
-  }catch(e){return JSON.parse(localStorage.getItem('mt_reviews')||'[]');}
-}
-function saveReviews(d){
-  localStorage.setItem('mt_reviews',JSON.stringify(d));
-  apiPostReview(d);
-}
-async function apiPostReview(d){
-  try{await fetch(API_BASE+'/reviews',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});}catch(e){}
-}
-function getHeadComments(){
-  var c=localStorage.getItem('mt_headcomments');
-  if(c)try{return JSON.parse(c);}catch(e){}
-  return [];
-}
-async function apiGetTasks(){
-  try{
-    var r=await fetch(API_BASE+'/tasks').then(r=>r.json());
-    localStorage.setItem('mt_headcomments',JSON.stringify(r.items||[]));
-    return r.items||[];
-  }catch(e){return JSON.parse(localStorage.getItem('mt_headcomments')||'[]');}
-}
-function saveHeadComments(d){
-  localStorage.setItem('mt_headcomments',JSON.stringify(d));
-  apiPostTask(d);
-}
-async function apiPostTask(d){
-  try{await fetch(API_BASE+'/tasks',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});}catch(e){}
-}
-function getCoachComments(){
-  var c=localStorage.getItem('mt_coachcomments');
-  if(c)try{return JSON.parse(c);}catch(e){}
-  return [];
-}
-async function apiGetComments(){
-  try{
-    var r=await fetch(API_BASE+'/comments').then(r=>r.json());
-    localStorage.setItem('mt_coachcomments',JSON.stringify(r.items||[]));
-    return r.items||[];
-  }catch(e){return JSON.parse(localStorage.getItem('mt_coachcomments')||'[]');}
-}
-function saveCoachComments(d){
-  localStorage.setItem('mt_coachcomments',JSON.stringify(d));
-  apiPostComment(d);
-}
-async function apiPostComment(d){
-  try{await fetch(API_BASE+'/comments',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});}catch(e){}
-}
+function getCustomers(){return JSON.parse(localStorage.getItem('mt_customers')||'[]')}
+function saveCustomers(d){localStorage.setItem('mt_customers',JSON.stringify(d))}
+function getReviews(){return JSON.parse(localStorage.getItem('mt_reviews')||'[]')}
+function saveReviews(d){localStorage.setItem('mt_reviews',JSON.stringify(d))}
+function getHeadComments(){return JSON.parse(localStorage.getItem('mt_headcomments')||'[]')}
+function saveHeadComments(d){localStorage.setItem('mt_headcomments',JSON.stringify(d))}
+function getCoachComments(){return JSON.parse(localStorage.getItem('mt_coachcomments')||'[]')}
+function saveCoachComments(d){localStorage.setItem('mt_coachcomments',JSON.stringify(d))}
 // 密码管理
 function getUserPwd(name){
   var pwds=JSON.parse(localStorage.getItem('mt_passwords')||'{}');
@@ -649,28 +580,6 @@ function login(){
     if(sel.options[i].value===selectedDate){sel.selectedIndex=i;break}
   }
   loadDashboard();
-  // 从云端同步数据
-  syncFromCloud();
-}
-
-// 从云端同步数据
-async function syncFromCloud(){
-  try{
-    var c=await fetch(API_BASE+'/customers').then(r=>r.json());
-    if(c.items){localStorage.setItem('mt_customers',JSON.stringify(c.items));loadDashboard();}
-  }catch(e){}
-  try{
-    var r=await fetch(API_BASE+'/reviews').then(r=>r.json());
-    if(r.items){localStorage.setItem('mt_reviews',JSON.stringify(r.items));loadReviews();}
-  }catch(e){}
-  try{
-    var t=await fetch(API_BASE+'/tasks').then(r=>r.json());
-    if(t.items){localStorage.setItem('mt_headcomments',JSON.stringify(t.items));}
-  }catch(e){}
-  try{
-    var cc=await fetch(API_BASE+'/comments').then(r=>r.json());
-    if(cc.items){localStorage.setItem('mt_coachcomments',JSON.stringify(cc.items));}
-  }catch(e){}
 }
 
 // ════ 页面切换 ════
