@@ -573,6 +573,7 @@ function login(){
   var storedPwd=getUserPwd(name);
   if(pwd!==storedPwd){showToast('密码错误');return}
   userBranch=branch; currentUser=name; userRole=role;
+  syncFromCloud();
   var roleNames={coach:'保险教练',manager:'理财经理',head:'行长'};
   document.getElementById('branchBadge').textContent=branch;
   document.getElementById('roleBadge').textContent=roleNames[role];
@@ -593,7 +594,6 @@ function login(){
     if(sel.options[i].value===selectedDate){sel.selectedIndex=i;break}
   }
   loadDashboard();
-  syncFromCloud();
 }
 
 function syncFromCloud(){
