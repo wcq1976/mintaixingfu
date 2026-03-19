@@ -593,10 +593,10 @@ function login(){
     if(sel.options[i].value===selectedDate){sel.selectedIndex=i;break}
   }
   loadDashboard();
-  syncFromCloud();
+  syncFromServer();
 }
 
-function syncFromCloud(){
+function syncFromServer(){
   fetch(API_BASE+'/customers').then(r=>r.json()).then(d=>{if(d.items)localStorage.setItem('mt_customers',JSON.stringify(d.items));loadDashboard();}).catch(e=>{});
   fetch(API_BASE+'/reviews').then(r=>r.json()).then(d=>{if(d.items)localStorage.setItem('mt_reviews',JSON.stringify(d.items));loadReviews();}).catch(e=>{});
   fetch(API_BASE+'/tasks').then(r=>r.json()).then(d=>{if(d.items)localStorage.setItem('mt_headcomments',JSON.stringify(d.items));}).catch(e=>{});
@@ -623,6 +623,7 @@ function changeDate(d){
   loadReviews();
   loadHeadComments();
   loadCoachComments();
+  syncFromServer();
 }
 
 // ════ 看板 ════
